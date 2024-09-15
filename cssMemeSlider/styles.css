@@ -44,12 +44,26 @@ body {
   flex-shrink: 0;
 }
 
-img {
+.img-wrap {
+  position: relative;
   width: 360px;
   height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   @media screen and (min-width: 1024px) {
-    width: 750px;
+    width: 780px;
+    height: 540px;
   }
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .desc {
