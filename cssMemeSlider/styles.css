@@ -95,10 +95,17 @@ img {
 
 .controls {
   position: relative;
-  bottom: 0;
+  bottom: 15%;
   display: flex;
   justify-content: center;
   gap: 5px;
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+  }
 }
 
 .control {
@@ -107,7 +114,25 @@ img {
   border-radius: 50%;
   background-color: cornflowerblue;
   cursor: pointer;
+  @media screen and (min-width: 1024px) {
+    width: 15px;
+    height: 15px;
+  }
 }
 .control:hover {
   background-color: #ffffff;
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+  border: 2px solid cornflowerblue;
+  background: transparent;
+}
+#slide1:checked ~ .controls label:nth-of-type(1):hover,
+#slide2:checked ~ .controls label:nth-of-type(2):hover,
+#slide3:checked ~ .controls label:nth-of-type(3):hover,
+#slide4:checked ~ .controls label:nth-of-type(4):hover {
+  border: 2px solid #fff;
 }
